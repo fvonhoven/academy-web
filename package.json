@@ -4,7 +4,8 @@
   "private": true,
   "dependencies": {
     "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "react-dom": "^16.5.2",
+    "react-native-web-player": "^2.0.0-alpha.3"
   },
   "devDependencies": {
     "react-scripts": "2.0.4"
