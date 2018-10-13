@@ -1,0 +1,53 @@
+.App {
+  text-align: center;
+}
+
+.AnswerHeader {
+  flex-direction: row;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.Instructions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2%;
+  display: flex;
+  flex: 1;
+}
+
+.InstructionsWrapper {
+  flex-direction: column;
+  margin-right: 100px;
+}
+
+.Title {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.Subtitle {
+  font-size: 50px;
+  margin-left: 50px;
+}
+
+.Image {
+  height: 400px;
+  width: 210px;
+}
+
+.ImageWrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.Pi {
+  color: #161343;
+  font-size: 24px;
+  position: absolute;
+  right: 5px;
+  margin-bottom: 5px;
+  text-decoration: none;
+}

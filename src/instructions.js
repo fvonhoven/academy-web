@@ -14,7 +14,7 @@ export const instructions = {
     },
     {
       title: "Challenge 4: ",
-      text: `Spread it out`
+      text: `Wall-to-Wall`
     },
     {
       title: "Challenge 5: ",
