@@ -17,6 +17,10 @@ const styles = {
 }
 
 class Answers extends Component {
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
   getTheCode(i) {
     switch (i) {
       case 1:
