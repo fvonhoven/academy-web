@@ -51,3 +51,28 @@
   margin-bottom: 5px;
   text-decoration: none;
 }
+
+.active {
+  background-color: #602370;
+}
+
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar li {
+  /* display: inline-block; */
+  float: left;
+}
+
+.navbar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}

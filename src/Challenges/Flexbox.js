@@ -1,9 +1,9 @@
 import React, { Component } from "react"
-import "./Main.css"
+import "../Main.css"
 import WebPlayer from "react-native-web-player"
-import { instructions } from "./instructions"
-import ThreeViews from "./challenge-code/flexbox/three-views"
-import SixViews from "./challenge-code/flexbox/six-views"
+import { instructions } from "../instructions"
+import ThreeViews from "../challenge-code/flexbox/three-views"
+import SixViews from "../challenge-code/flexbox/six-views"
 import { Link } from "react-router-dom"
 
 const styles = {
@@ -13,7 +13,7 @@ const styles = {
   }
 }
 
-class Challenges extends Component {
+class Flexbox extends Component {
   getTheCode(i) {
     switch (i) {
       case 4:
@@ -29,7 +29,7 @@ class Challenges extends Component {
     return challenges.map((c, i) => {
       const renderDivider = challenges.length - 1 !== i
       return (
-        <div className="Challenge">
+        <div key={i} className="Challenge">
           <div className="Instructions">
             <div className="InstructionsWrapper">
               <p className="Title">{challenges[i].title}</p>
@@ -38,13 +38,13 @@ class Challenges extends Component {
             <div className="ImageWrapper">
               <img
                 className="Image"
-                src={require(`./images/flexbox${i}.png`)}
+                src={require(`../images/flexbox${i}.png`)}
                 alt={`Flexbox ${i}`}
               />
               {!renderDivider && (
                 <img
                   className="Image"
-                  src={require(`./images/flexbox-cell.png`)}
+                  src={require(`../images/flexbox-cell.png`)}
                   alt={`Flexbox Cell`}
                 />
               )}
@@ -67,11 +67,16 @@ class Challenges extends Component {
   render() {
     return (
       <div className="App">
-        <h1>💪 Flex Yo Stuff with Style</h1>
+        <h1>
+          <span role="img" aria-label="strong arm">
+            💪
+          </span>{" "}
+          Flex Yo Stuff with Style
+        </h1>
         {this.renderChallenges()}
       </div>
     )
   }
 }
 
-export default Challenges
+export default Flexbox

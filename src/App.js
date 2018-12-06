@@ -1,7 +1,9 @@
 import React from "react"
 import { Switch, Route } from "react-router-dom"
-import Challenges from "./Challenges"
+import Flexbox from "./Challenges/Flexbox"
+import Home from "./Home"
 import Answers from "./Answers"
+import { Navbar } from "./Components/Navbar"
 
 // The Main component renders one of the three provided
 // Routes (provided that one matches). Both the /roster
@@ -10,9 +12,11 @@ import Answers from "./Answers"
 // when the pathname is exactly the string "/"
 const App = () => (
   <main>
+    <Navbar />
     <Switch>
-      <Route exact path="/" component={Challenges} />
-      <Route path="/answers" component={Answers} />
+      <Route exact path="/" component={Home} />
+      <Route path="/Flexbox" component={Flexbox} />
+      <Route path="/Answers" component={Answers} />
     </Switch>
   </main>
 )
