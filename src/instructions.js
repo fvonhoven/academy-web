@@ -27,28 +27,19 @@ export const instructions = {
   ],
   packingList: [
     {
-      title: "Step 1: ",
-      text: `Center the boxes`
+      title: "Step 1",
+      overview: ["Store TextInput value in state", "Display TextInput's value below"]
     },
     {
-      title: "Step 2: ",
-      text: `The great pyramid`
+      title: "Step 2",
+      overview: [
+        `Introduce "items" array into local state`,
+        "Able to push inputted items into the items array with setState"
+      ]
     },
     {
-      title: "Step 3: ",
-      text: `Divide and conquer`
-    },
-    {
-      title: "Step 4: ",
-      text: `Wall-to-Wall`
-    },
-    {
-      title: "Step 5: ",
-      text: `Zig-zag`
-    },
-    {
-      title: "Final Challenge: ",
-      text: `The Cell`
+      title: "Step 3",
+      overview: ["Clear input & list"]
     }
   ]
 }

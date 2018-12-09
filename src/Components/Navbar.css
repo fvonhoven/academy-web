@@ -7,10 +7,11 @@
 
 .logo {
   float: left;
-  height: 40px;
-  padding: 15px 30px;
-  font-size: 1.3em;
-  line-height: 35px;
+  align-self: center;
+  height: 30px;
+  padding: 0px 30px;
+  margin-top: 22px;
+  width: 250px;
 }
 
 .nav-main ul {
@@ -28,10 +29,10 @@
   display: inline-block;
   padding: 15px 20px;
   height: 40px;
-  line-height: 45px;
+  line-height: 35px;
   color: white;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 22px;
 }
 
 .nav-item:hover {

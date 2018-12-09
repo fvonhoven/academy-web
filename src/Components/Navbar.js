@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import "./Navbar2.css"
+import "./Navbar.css"
 
 export class Navbar extends Component {
   state = {
@@ -17,13 +17,13 @@ export class Navbar extends Component {
         <div className="nav-sub">
           <ul>
             <li>
-              <a href="#">Step 1</a>
+              <a href="/step1">Step 1</a>
             </li>
             <li>
-              <a href="#">Step 2</a>
+              <a href="/step2">Step 2</a>
             </li>
             <li>
-              <a href="#">Step 3</a>
+              <a href="/step3">Step 3</a>
             </li>
           </ul>
         </div>
@@ -33,17 +33,12 @@ export class Navbar extends Component {
 
   renderTabs = () => {
     const { activeTab } = this.state
-    const TABS = ["Home", "Flexbox", "PackingList", "About"]
+    const TABS = ["Home", "Flexbox", "PackingList"]
     return TABS.map((tab, i) => {
-      const backgroundColor = tab === activeTab ? "#602370" : null
+      const backgroundColor = tab === activeTab ? "#30229970" : null
       const href = tab === "Home" ? "/" : `/${tab}`
       return (
-        <li
-          className="list-item"
-          key={i}
-          onClick={() => this.setActiveTab(tab)}
-          style={{ backgroundColor }}
-        >
+        <li key={i} onClick={() => this.setActiveTab(tab)} style={{ backgroundColor }}>
           <a className="nav-item" href={href.toLowerCase()}>
             {tab}
           </a>
@@ -57,7 +52,7 @@ export class Navbar extends Component {
     return (
       <nav className="nav-main">
         <ul>
-          <div className="logo">IR Academy Logo</div>
+          <img className="logo" src={require("../images/logo.png")} />
           {this.renderTabs()}
         </ul>
       </nav>
