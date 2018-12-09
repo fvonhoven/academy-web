@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import "./Navbar.css"
+import { Link } from "react-router-dom"
 
 export class Navbar extends Component {
   state = {
@@ -17,13 +18,13 @@ export class Navbar extends Component {
         <div className="nav-sub">
           <ul>
             <li>
-              <a href="/step1">Step 1</a>
+              <Link to="/step1">Step 1</Link>
             </li>
             <li>
-              <a href="/step2">Step 2</a>
+              <Link to="/step2">Step 2</Link>
             </li>
             <li>
-              <a href="/step3">Step 3</a>
+              <Link to="/step3">Step 3</Link>
             </li>
           </ul>
         </div>
@@ -39,9 +40,9 @@ export class Navbar extends Component {
       const href = tab === "Home" ? "/" : `/${tab}`
       return (
         <li key={i} onClick={() => this.setActiveTab(tab)} style={{ backgroundColor }}>
-          <a className="nav-item" href={href.toLowerCase()}>
+          <Link className="nav-item" to={href.toLowerCase()}>
             {tab}
-          </a>
+          </Link>
           {tab === "PackingList" && this.renderPackingListDropdown()}
         </li>
       )
