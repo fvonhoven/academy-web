@@ -19,6 +19,7 @@ const ListInput = props => {
         style={styles.input}
         value={value}
         onChangeText={val => onChangeText(val)}
+        onSubmitEditing={onAddItem}
         autoFocus
       />
       {/* TODO: fill in "text" prop and "onButtonPress" functions - uncomment Buttons when ready */}

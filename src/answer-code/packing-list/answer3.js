@@ -7,7 +7,7 @@ const Button = props => {
     return (
       <TouchableOpacity
         style={[styles.button, styleOverride]}
-        onPress={() => onButtonPress()}
+        onPress={onButtonPress}
       >
         <Text style={styles.buttonText}>{text}</Text>
       </TouchableOpacity>
@@ -22,10 +22,11 @@ const ListInput = props => {
         style={styles.input}
         value={value}
         onChangeText={val => onChangeText(val)}
+        onSubmitEditing={onAddItem}
         autoFocus
       />
-      <Button text="ADD" onButtonPress={() => onAddItem()} />
-      <Button text="Clear" onButtonPress={() => onClearItems()} styleOverride={{backgroundColor: "gray"}} />
+      <Button text="ADD" onButtonPress={onAddItem} />
+      <Button text="Clear" onButtonPress={onClearItems} styleOverride={{backgroundColor: "gray"}} />
     </View>
   )
 }
