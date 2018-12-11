@@ -4,7 +4,20 @@ import React, { Component } from "react"
 import { StyleSheet, Text, TextInput, View, TouchableOpacity } from "react-native"
 
 export default class App extends Component {
-  state = { items: [], inputValue: "" }
+  state = { inputValue: "", items: [] }
+
+  addItem = () => {
+    this.setState({ 
+      items: [...this.state.items, this.state.inputValue] 
+    })
+    
+    // Optionally use functional set state to get & use the previous state's values
+    {/* 
+      this.setState(prevState => { 
+        return { items: [...prevState.items, prevState.inputValue] }
+      })
+    */}
+  }
 
   render() {
     const { items } = this.state
@@ -14,12 +27,11 @@ export default class App extends Component {
           <TextInput 
             style={styles.input}
             onChangeText={val => this.setState({inputValue: val})}
+            onSubmitEditing={this.addItem}
           />
           <TouchableOpacity 
             style={styles.addButton}
-            onPress={() => this.setState({ 
-              items: [...this.state.items, this.state.inputValue] 
-            })}
+            onPress={this.addItem}
           >
             <Text style={styles.buttonText}>ADD</Text>
           </TouchableOpacity>

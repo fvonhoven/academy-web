@@ -1,29 +1,46 @@
 export default `
-
 import React, { Component } from "react"
-import { StyleSheet, Text, TextInput, View, TouchableOpacity } from "react-native"
+import { StyleSheet, Text, View, TextInput, TouchableOpacity } from "react-native"
+
+const Button = props => {
+  const { onButtonPress, text, styleOverride } = props
+  return (
+    {/*
+      TODO: your Button code here
+    */}
+  )
+}
+
+const ListInput = props => {
+  const { value, onChangeText, onAddItem, onClearItems } = props
+  return (
+    <View style={styles.inputRow}>
+      <TextInput
+        style={styles.input}
+        value={value}
+        onChangeText={val => onChangeText(val)}
+        autoFocus
+      />
+      {/* TODO: fill in "text" prop and "onButtonPress" functions - uncomment Buttons when ready */}
+      {/* <Button text="???" onButtonPress={() => null} /> */}
+      {/* <Button styleOverride={{backgroundColor: "gray"}} /> */}
+    </View>
+  )
+}
 
 export default class App extends Component {
-  state = { items: [], inputValue: "" }
+  state = { inputValue: "", items: [] }
+
+  addItem = () => this.setState({ items: [...this.state.items, this.state.inputValue] })
 
   render() {
-    const { items } = this.state
+    const { inputValue, items } = this.state
     return (
       <View style={styles.container}>
-        <View style={styles.inputRow}>
-          <TextInput 
-            style={styles.input}
-            onChangeText={val => this.setState({inputValue: val})}
-          />
-          <TouchableOpacity 
-            style={styles.addButton}
-            onPress={() => this.setState({ 
-              items: [...this.state.items, this.state.inputValue] 
-            })}
-          >
-            <Text style={styles.buttonText}>ADD</Text>
-          </TouchableOpacity>
-        </View>
+        <ListInput
+          value={inputValue}
+          // TODO: pass props to this component
+        /> 
         { items.map((item, index) => 
             <Text key={index} style={styles.theValue}>{ item }</Text>
         )}
@@ -51,8 +68,7 @@ const styles = StyleSheet.create({
     fontSize: 18
   },
   inputRow: {
-    flexDirection: "row",
-    justifyContent: "center",
+    flexDirection: "row"
   },
   addButton: {
     marginLeft: 10,
@@ -61,6 +77,9 @@ const styles = StyleSheet.create({
     width: 40,
     justifyContent: "center",
     alignItems: "center"
+  },
+  button: {
+    // TODO: style your button(s)
   },
   buttonText: {
     color: "white"

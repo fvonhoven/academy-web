@@ -3,11 +3,11 @@ import React, { Component } from "react"
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from "react-native"
 
 const Button = props => {
-    const { onPress, text, style } = props
+    const { onButtonPress, text, styleOverride } = props
     return (
       <TouchableOpacity
-        style={[styles.button, style]}
-        onPress={() => onPress()}
+        style={[styles.button, styleOverride]}
+        onPress={() => onButtonPress()}
       >
         <Text style={styles.buttonText}>{text}</Text>
       </TouchableOpacity>
@@ -24,24 +24,24 @@ const ListInput = props => {
         onChangeText={val => onChangeText(val)}
         autoFocus
       />
-      <Button text="ADD" onPress={() => onAddItem()} />
-      <Button text="Clear" onPress={() => onClearItems()} style={{backgroundColor: "gray"}} />
+      <Button text="ADD" onButtonPress={() => onAddItem()} />
+      <Button text="Clear" onButtonPress={() => onClearItems()} styleOverride={{backgroundColor: "gray"}} />
     </View>
   )
 }
 
 export default class App extends Component {
-  state = {inputValue: null, items: []}
+  state = { inputValue: "", items: [] }
 
-  handleAddPress = () => {
+  addItem = () => {
     const { inputValue, items } = this.state
     if (inputValue) {
       const newItems = [...items, inputValue]
-      this.setState({ items: newItems, inputValue: "" })
+      this.setState({ items: newItems, inputValue: "" }) // Clear the inputValue (& TextField) on add item as well
     }
   }
 
-  handleClearPress = () => this.setState({ items: [], inputValue: "" })
+  clearItems = () => this.setState({ inputValue: "", items: [] })
 
   render() {
     const { items, inputValue } = this.state
@@ -49,8 +49,8 @@ export default class App extends Component {
       <View style={styles.container}>
         <ListInput
           value={inputValue}
-          onAddItem={this.handleAddPress}
-          onClearItems={this.handleClearPress}
+          onAddItem={this.addItem}
+          onClearItems={this.clearItems}
           onChangeText={value => this.setState({inputValue: value})}
         />
         { items.map((item, i) => <Text style={styles.theValue} key={i}>{ item }</Text>)}

@@ -2,12 +2,6 @@ export default `
 import React, { Component } from "react"
 import { StyleSheet, Text, View, TextInput } from "react-native"
 
-/*
-  STEP ONE
-  • Introduce local state
-  • Able to write to and read from local state
-*/
-
 export default class App extends Component {
   state = { inputValue: null }
 

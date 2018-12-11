@@ -1,9 +1,9 @@
 export default `
 import React, { Component } from "react"
-import { StyleSheet, Text, View, TextInput } from "react-native"
+import { StyleSheet, Text, View, TextInput, TouchableOpacity } from "react-native"
 
 export default class App extends Component {
-  state = { inputValue: null }
+  state = { inputValue: null, items: [] }
 
   render() {
     return (
@@ -12,6 +12,7 @@ export default class App extends Component {
           style={styles.input}
           value={this.state.inputValue}
           onChangeText={val => this.setState({ inputValue: val })}
+          someValueToMakeReturnKeyAddItem={this.addItem} // TODO: find this prop
         />
         <Text style={styles.theValue}>{this.state.inputValue}</Text>
       </View>

@@ -8,10 +8,12 @@ import answer1 from "../../answer-code/packing-list/answer1"
 const styles = {
   webPlayer: {
     padding: "5%",
-    height: 1000
+    height: 1000,
+    marginTop: 20
   },
   li: {
     textAlign: "left",
+    fontSize: 20,
     marginBottom: 20
   },
   hr: {
@@ -22,24 +24,58 @@ const styles = {
 
 export class Step1 extends Component {
   render() {
-    const challenges = instructions.packingList
-    const overview = challenges[0].overview
+    const { title, overview, objective, importantLinks } = instructions.packingList[0]
     return (
       <div className="App">
-        <h2>{challenges[0].title}</h2>
-        <div className="Challenge">
-          <div className="Instructions">
-            <div className="InstructionsWrapper">
-              <ul className="InstructionsWrapper">
-                {overview.map(val => (
-                  <li style={styles.li}>{val}</li>
-                ))}
-              </ul>
+        <h2>{title}</h2>
+        <hr />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            paddingLeft: 50,
+            paddingRight: 50,
+            justifyContent: "center"
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              flex: 0.65,
+              alignItems: "center",
+              flexDirection: "column",
+              justifyContent: "center"
+            }}
+          >
+            <h4>Overview</h4>
+            <div style={{ width: "70%" }}>
+              <p style={{ width: "100%" }}>{overview}</p>
             </div>
-            <div className="ImageWrapper">
-              <img className="Image" src={require(`../../images/PackingList/Step1.png`)} />
+            <h4>Objective</h4>
+            <div style={{ width: "70%" }}>
+              <p>{objective}</p>
+            </div>
+            <div>
+              <h4>Important Links</h4>
+              {importantLinks.map(link => {
+                const { name, url } = link
+                return (
+                  <ul>
+                    <li>
+                      <a style={{ fontSize: 20 }} href={url} target="_blank">
+                        {name}
+                      </a>
+                    </li>
+                  </ul>
+                )
+              })}
             </div>
           </div>
+          <div className="ImageWrapper">
+            <img className="Image" src={require(`../../images/PackingList/Step1.png`)} />
+          </div>
+        </div>
+        <div className="Challenge">
           <WebPlayer style={styles.webPlayer} code={step_1} />
           <hr style={styles.hr} />
           <h2>Answer</h2>
