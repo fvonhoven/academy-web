@@ -73,6 +73,33 @@ class Flexbox extends Component {
           </span>{" "}
           Flex Yo Stuff with Style
         </h1>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexDirection: "column"
+          }}
+        >
+          <img
+            style={{ backgroundSize: "contain", width: "35%", height: 400, marginTop: 50 }}
+            src={require("../images/justifyContent.png")}
+          />
+          <img
+            style={{ backgroundSize: "contain", width: "35%", height: 400, marginTop: 100 }}
+            src={require("../images/alignItems.png")}
+          />
+          <img
+            style={{
+              backgroundSize: "contain",
+              width: "40%",
+              height: 250,
+              marginTop: 100,
+              marginBottom: 100
+            }}
+            src={require("../images/flexbox-props.png")}
+          />
+        </div>
         {this.renderChallenges()}
       </div>
     )
