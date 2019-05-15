@@ -82,17 +82,22 @@ class Flexbox extends Component {
           }}
         >
           <img
-            style={{ backgroundSize: "contain", width: "50%", height: 400, marginTop: 50 }}
+            style={{
+              backgroundSize: "contain",
+              width: "auto",
+              height: 400,
+              marginTop: 50
+            }}
             src={require("../images/justifyContent.png")}
           />
           <img
-            style={{ backgroundSize: "contain", width: "50%", height: 400, marginTop: 100 }}
+            style={{ backgroundSize: "contain", width: "auto", height: 400, marginTop: 100 }}
             src={require("../images/alignItems.png")}
           />
           <img
             style={{
               backgroundSize: "contain",
-              width: "50%",
+              width: "auto",
               height: 250,
               marginTop: 100,
               marginBottom: 100
