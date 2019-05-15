@@ -10,7 +10,8 @@ const styles = {
   webPlayer: {
     padding: "5%",
     height: 500
-  }
+  },
+  tabText: { color: "yellow" }
 }
 
 class Flexbox extends Component {
@@ -77,22 +78,21 @@ class Flexbox extends Component {
           style={{
             display: "flex",
             alignItems: "center",
-            justifyContent: "center",
             flexDirection: "column"
           }}
         >
           <img
-            style={{ backgroundSize: "contain", width: "35%", height: 400, marginTop: 50 }}
+            style={{ backgroundSize: "contain", width: "50%", height: 400, marginTop: 50 }}
             src={require("../images/justifyContent.png")}
           />
           <img
-            style={{ backgroundSize: "contain", width: "35%", height: 400, marginTop: 100 }}
+            style={{ backgroundSize: "contain", width: "50%", height: 400, marginTop: 100 }}
             src={require("../images/alignItems.png")}
           />
           <img
             style={{
               backgroundSize: "contain",
-              width: "40%",
+              width: "50%",
               height: 250,
               marginTop: 100,
               marginBottom: 100
